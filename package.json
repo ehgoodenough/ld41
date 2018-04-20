@@ -1,0 +1,32 @@
+{
+  "name": "ld41",
+  "version": "1.0.0-alpha",
+  "description": "A game for Ludum Dare 41.",
+  "private": true,
+  "contributors": [
+    "Andrew McPherson <@ehgoodenough>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehgoodenough/ld41"
+  },
+  "scripts": {
+    "build": "codeglue --stage=PRODUCTION",
+    "start": "codeglue --stage=DEVELOPMENT --mode=SERVER",
+    "share": "exit 1"
+  },
+  "dependencies": {
+    "keyb": "^1.1.0",
+    "preact": "^8.2.7",
+    "query-string": "^6.0.0",
+    "shortid": "^2.2.8",
+    "statgrab": "^1.2.0",
+    "universal-ga": "^1.2.0",
+    "yaafloop": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "codeglue": "^1.4.1"
+  }
+}
