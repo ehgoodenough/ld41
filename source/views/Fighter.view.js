@@ -12,8 +12,8 @@ export default class Fighter {
     }
     get style() {
         return {
-            top: this.props.figther.y + "em",
-            left: this.props.figther.x + "em",
+            top: this.props.fighter.position.y + "em",
+            left: this.props.fighter.position.x + "em",
         }
     }
 }
