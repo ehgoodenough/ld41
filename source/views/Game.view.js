@@ -4,15 +4,40 @@ import "views/Game.view.less"
 
 import Frame from "views/Frame.view.js"
 import Version from "views/Version.view.js"
+import Fighter from "views/Fighter.view.js"
 
-export default function View(props) {
-    return (
-        <Frame>
-            <Version/>
-        </Frame>
-    )
+export default class Game {
+    render() {
+        return (
+            <Frame>
+                <Version/>
+                <Camera game={this.props.game}>
+                    <Fighter figther={this.props.game.figther}/>
+                </Camera>
+            </Frame>
+        )
+    }
 }
 
-// TODO: Refactor the X and Z to be horizontal and Y to be vertical.
-// TODO: Why are we offseting z/2 for the upwards transform, and not the others?
-// TODO: Why is the x/y origin in the top left?
+import "views/Camera.view.less"
+
+class Camera {
+    render() {
+        return (
+            <div className={this.className} style={this.style}>
+                {this.props.children}
+            </div>
+        )
+    }
+    get className() {
+        return [
+            "Camera",
+            // this.props.game.timer <= 0 ? "SlowDown" : ""
+        ].join(" ")
+    }
+    get style() {
+        return {
+            position: "absolute"
+        }
+    }
+}

@@ -10,8 +10,8 @@ import "vendor/GoogleAnalytics.js"
 
 let game = new Game()
 
-let mount = Preact.render(<GameView/>, document.body)
+let mount = Preact.render(<GameView game={game}/>, document.body)
 let loop = new Yaafloop((delta) => {
     game.update(delta)
-    Preact.render(<GameView/>, document.body, mount)
+    Preact.render(<GameView game={game}/>, document.body, mount)
 })
